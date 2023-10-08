@@ -409,21 +409,6 @@ cat >/root/tmp <<-END
 ### ARI VPN STORES $TANGGAL $MYIP
 END
 ####
-RIZKIHDYTPROJECT() {
-    data=($(cat /root/tmp | grep -E "^### " | awk '{print $2}'))
-    for user in "${data[@]}"; do
-        exp=($(grep -E "^### $user" "/root/tmp" | awk '{print $3}'))
-        d1=($(date -d "$exp" +%s))
-        d2=($(date -d "$Date_list" +%s))
-        exp2=$(((d1 - d2) / 86400))
-        if [[ "$exp2" -le "0" ]]; then
-            echo $user >/etc/.$user.ini
-        else
-            rm -f /etc/.$user.ini
-        fi
-    done
-    rm -f /root/tmp
-}
 
 function enable_services(){
     print_install "Restart servis"
@@ -586,7 +571,6 @@ echo ""
 
 }
 cd /tmp
-RIZKIHDYTPROJECT
 first_setup
 dir_xray
 add_domain
