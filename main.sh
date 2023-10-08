@@ -28,8 +28,8 @@ TIME=$(date +'%Y-%m-%d %H:%M:%S')
 RAMMS=$(free -m | awk 'NR==2 {print $2}')
 KEY="5819362534:AAEngTgeSr0iRypRLumMxhUpn1o1RJRz2g4"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
-REPO="https://raw.githubusercontent.com/Anugerah77/tukangcrack1/main"
-CDNF="https://raw.githubusercontent.com/Anugerah77/tukangcrack1/main"
+REPO="https://raw.githubusercontent.com/Anugerah77/tukangcrack1/main/"
+CDNF="https://raw.githubusercontent.com/Anugerah77/tukangcrack1/main/"
 APT="apt-get -y install "
 domain=$(cat /root/domain)
 start=$(date +%s)
